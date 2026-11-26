@@ -93,7 +93,8 @@ ml-challenge-imoveis/
 │       └── 05_real_vs_previsto.png
 │
 └── screenshots/
-    └── interface.png
+    ├── interface.png
+    └── resultado.png
 ```
 
 ## 5. Análise exploratória
@@ -221,12 +222,15 @@ Testes realizados com a aplicação (valores em USD):
 | **A — Pequena e antiga** | 800 pés², 1920, 2 quartos, 1 banheiro, sem garagem, qualidade 3, bairro Old Town | US$ 53.838 |
 | **B — Média** | 1.600 pés², 1985, 3 quartos, 2 banheiros, 2 vagas, qualidade 6, bairro North Ames | US$ 170.173 |
 | **C — Grande e de alto padrão** | 3.200 pés², 2005, 4 quartos, 3 banheiros, 3 vagas, qualidade 9, bairro Northridge Heights | US$ 515.658 |
+| **D — Exemplo das capturas** | 1.670 pés², 1995, 3 quartos, 2 banheiros, 4 vagas, qualidade 7, bairro Green Hills | US$ 325.536 |
 
 As previsões acompanham a ordem esperada de valor e são coerentes com a distribuição
 real da base (mediana de US$ 160.000). O perfil B, propositalmente "mediano", ficou
 próximo da mediana observada.
 
-![Interface da aplicação](screenshots/interface.png)
+![Formulário da aplicação](screenshots/interface.png)
+
+![Resultado da estimativa](screenshots/resultado.png)
 
 ## 10. Limitações
 
