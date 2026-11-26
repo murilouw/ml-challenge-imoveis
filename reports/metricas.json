@@ -1,0 +1,47 @@
+{
+  "gerado_em": "2026-11-25T20:27:10",
+  "dataset": {
+    "nome": "Ames Housing",
+    "fonte": "OpenML data_id=41211",
+    "registros_originais": 2930,
+    "registros_usados": 2927,
+    "features_utilizadas": 23,
+    "fonte_original": "De Cock (2011), Journal of Statistics Education 19(3)"
+  },
+  "alvo": "Sale_Price (USD)",
+  "transformacao_alvo": "log1p (revertida com expm1 na previsão)",
+  "divisao": {
+    "treino": 0.8,
+    "teste": 0.2,
+    "random_state": 42
+  },
+  "modelos": {
+    "Ridge": {
+      "MAE": 14381.14,
+      "RMSE": 21521.78,
+      "R2": 0.9425,
+      "rmse_validacao_cruzada": 22360.28,
+      "melhores_parametros": {
+        "regressor__modelo__alpha": 0.1
+      }
+    },
+    "RandomForest": {
+      "MAE": 15774.52,
+      "RMSE": 24855.73,
+      "R2": 0.9233,
+      "rmse_validacao_cruzada": 26055.01,
+      "melhores_parametros": {
+        "regressor__modelo__max_depth": 20,
+        "regressor__modelo__min_samples_leaf": 2
+      }
+    }
+  },
+  "melhor_modelo": "Ridge",
+  "justificativa": "O Ridge obteve o menor RMSE no conjunto de teste (US$ 21.521,78) e o maior R² (0.9425), contra US$ 24.855,73 e 0.9233 do RandomForest. Apesar de o Random Forest capturar relações não lineares, o modelo regularizado generalizou melhor com o volume de dados disponível, evitando o sobreajuste típico de florestas em bases pequenas.",
+  "conclusoes_eda": [
+    "O preço é assimétrico à direita (assimetria = 1.74): média de US$ 180.796,06 contra mediana de US$ 160.000,00, com cauda de imóveis de alto valor.",
+    "As variáveis mais correlacionadas com o preço são Gr_Liv_Area (0.71) e Garage_Cars (0.65), indicando que o porte do imóvel é o principal sinal de valor.",
+    "Imóveis com qualidade geral máxima valem cerca de 9.2× mais que os de qualidade mínima (US$ 450.217,32 contra US$ 48.725,00).",
+    "Foram encontrados 3 registros inconsistentes (vendas parciais de imóveis acima de 4.000 pés²), removidos antes do treinamento."
+  ]
+}
